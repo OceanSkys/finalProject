@@ -1,41 +1,104 @@
 .App {
   text-align: center;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
 body {
   background-color: aqua;
 }
+.Copyright {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  background-color: aliceblue;
+}
+.form-control{
+  height: 30px;
+  display: flex;
+  align-self: center;
+}
+.HeaderFooterColorBar {
+  height: 4px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.Logo {
+  margin: 12px;
+  font-family: "Grandstander", cursive;
+  font-size: 30px;
+  font-weight: bold;
+  display: flex;
+  align-self: center;
+  padding-left: 10px;
+}
+.card-col{
+  height:auto;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1vw;
+}
+.h1{
+  margin-right: 30px;
+}
+.image-col {
+display: flex;
+width: 600px;
+}
+.image-props {
+  height: auto;
+  max-width: 100%;
+}
+.image-props:hover {
+  cursor: pointer;
+}
+.Link {
+  margin: 30px;
+  font-size: 25px;
+  font-family: "Grandstander", cursive;
+}
+.Navs {
+  width: 350px;
+  display: flex;
+  justify-content: center;
+  padding-right: 30px;
+}
+.Products-Container{
+  /* background-color: orange; */
+  height: 800px;
+}
+.product-description {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color:blanchedalmond;
+  border: 40px;
+  border-color: blueviolet;
+} 
+.product-container {
+  background-color: white;
+  width: fit-content;;
+  height: 500px;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 40px;
+}
+.product-row {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+/* .product-section {
+  display: column;
+  
+} */
+/* .title {
+  text-decoration: underline;
+} */
+.search {
+  display: flex;
+  justify-content: center;
+  background-color: aliceblue;
+}
+

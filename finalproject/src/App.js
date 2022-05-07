@@ -1,13 +1,15 @@
-import logo from './logo.svg';
+
 import './App.css';
-import profileImage from './img/Picofme.png'
+import HeaderFooter from './components/HeaderFooter';
+import { Outlet } from 'react-router-dom';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
   return (
-    <div className="App">
-      <h1>my react App</h1>
-      <h2>Auther: Jeremy Thornton</h2>
-      <img src={profileImage} alt="profile-image" />
+    <div>
+        <HeaderFooter>
+          <Outlet />
+        </HeaderFooter>
     </div>
   );
 }
