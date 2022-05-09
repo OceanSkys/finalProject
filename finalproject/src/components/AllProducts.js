@@ -43,7 +43,7 @@ export default function AllProducts() {
                 <div className="product-container">
                     <div className="product-row">
                         <div className="image-col">
-                            <img className="image-props" src={product.image} alt='product' onClick={() => navigate("/my-cart")}/>
+                            <img className="image-props" src={product.image} alt='product' onClick={() => navigate(`/product-details/${product.id}`)}/>
                         </div>
                         <div key={product.id} className='card-col'>
                             <div className="product-description">

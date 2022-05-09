@@ -1,6 +1,8 @@
   import { NavLink } from "react-router-dom";
+  import {useNavigate} from 'react-router-dom';
 
   export default function HeaderFooter(props) {
+    let navigate = useNavigate();
     return (
       <div>
         <div className="HeaderFooterColorBar" />
@@ -12,7 +14,7 @@
             backgroundColor: "white",
           }}
         >
-          <div className="Logo">Jeremy's Products</div>
+          <div className="Logo" onClick={() => navigate(`/`)}>Jeremy's Products</div>
           <div className="Navs">
             <NavLink to="/" className="Link">
               Home

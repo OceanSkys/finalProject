@@ -9,6 +9,7 @@ import ProductsPicker from './components/Home';
 import AllProducts from './components/AllProducts';
 import NotFound from './components/NotFound';
 import MyCart from './components/MyCart'
+import ProductDetails from './components/ProductDetails'
 
 ReactDOM.render(
   <React.StrictMode>
@@ -18,6 +19,7 @@ ReactDOM.render(
           <Route index element={<ProductsPicker />} />
           <Route path="all-products" element={<AllProducts />} />
           <Route path="my-cart" element={<MyCart />} />
+          <Route path="product-details/:id" element={<ProductDetails />} />
           <Route path="*" element={<NotFound />} />
         </Route>
       </Routes>
