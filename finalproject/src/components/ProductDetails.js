@@ -62,7 +62,10 @@ useEffect(() => {
               <h1 className="title">{dataNumb.title}</h1>
               <h1>{dataNumb.description}</h1>
               <h1>${dataNumb.price}</h1>
-              <button onClick={ () => setCart([...cart, dataNumb])}>Add to cart</button>
+              <div>
+                <button className="mx-2" onClick={ () => setCart([...cart, dataNumb])}>Add to cart</button>
+                <button className="mx-2" onClick={() => navigate(`/my-cart`)}>Go to Cart</button>
+              </div>
               <QuantityPicker  min={1} max={10} value={0} onChange={getPickerValue} smooth/>
             </div>
           </div> 

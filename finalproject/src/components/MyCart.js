@@ -1,4 +1,4 @@
-import React, {useContext} from 'react';
+import {useContext} from 'react';
 import {CartContext} from '../context/CartContext'
 import { useNavigate } from 'react-router-dom';
 
@@ -16,7 +16,8 @@ const Cart = () => {
 
   return (
     <div>
-      <span>items in cart : {cart.length}</span>
+      <button className="go-back" onClick={() => navigate(`/all-products`)}>Back to Products</button>
+      <h2 className='d-flex my-3'>Items in cart : {cart.length}</h2>
       {cart.map(( item, index) => (
       <div key={index} className="cart-item-container">
         <div className='col-4 d-flex align-self-center'>

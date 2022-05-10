@@ -88,7 +88,8 @@ width: 600px;
   width: 350px;
   display: flex;
   justify-content: center;
-  padding-right: 30px;
+  padding-right: 50px;
+  margin-right: 50px;
 }
 .Products-Container{
   /* background-color: orange; */

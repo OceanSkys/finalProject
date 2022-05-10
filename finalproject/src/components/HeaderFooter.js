@@ -28,6 +28,9 @@
             <NavLink to="my-cart" className="Link">
               My cart
             </NavLink>
+            <NavLink to="checkout" className="Link">
+              Checkout
+            </NavLink>
           </div>
         </div>
           <div style={{ padding: 40 }}>
