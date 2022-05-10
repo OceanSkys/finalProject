@@ -41,7 +41,7 @@ import { useState } from "react";
             <div>
                 <h1>Total Amount: ${subTotal}</h1>
             </div>
-            <NavLink to="/all-products" className="btn btn-danger col-md-2 fw-bold justify-content-end mt-3 mb-4" type="submit" onClick={ClearCart}>Checkout</NavLink>
+            <NavLink to="/all-products" className="btn btn-primary col-md-2 fw-bold justify-content-end mt-3 mb-4" type="submit" onClick={ClearCart}>Checkout</NavLink>
         </div>
       );
     };

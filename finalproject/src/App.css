@@ -14,6 +14,14 @@ body {
   justify-content: end;
   margin: 20px;
 }
+.carousel-container {
+  background-color: white;
+  width: fit-content;;
+  height: 700px;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 40px;
+}
 .Copyright {
   /* display: flex;
   justify-content: center;
@@ -110,6 +118,7 @@ width: 600px;
   height: 500px;
   display: flex;
   justify-content: center;
+  align-content: center;
   margin-bottom: 40px;
 }
 .cart-item-container {
@@ -134,7 +143,13 @@ width: 600px;
 }
 .search {
   display: flex;
+  width: 600px;
+  height: 100px;
+  margin: 0 auto;
+  align-self: center;
   justify-content: center;
   background-color: aliceblue;
 }
-
+.img {
+  margin-top: 25%;
+}

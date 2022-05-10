@@ -40,8 +40,8 @@ export default function AllProducts() {
         <br></br>
           <div className="product-section">
             {data.map((product) => (
-                <div className="product-container">
-                    <div className="product-row">
+                <div className="product-container border border-dark">
+                    <div className="product-row d-flex justify-content-center align-content-center">
                         <div className="image-col">
                             <img className="image-props" src={product.image} alt='product' onClick={() => navigate(`/product-details/${product.id}`)}/>
                         </div>
