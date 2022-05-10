@@ -1,79 +1,75 @@
 import { useParams } from "react-router-dom";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import {useNavigate} from 'react-router-dom';
+import {CartContext} from '../context/CartContext'
+import {QuantityPicker} from 'react-qty-picker';
+
 
 export default function ProductDetails() {
+
   let navigate = useNavigate();
   let params = useParams();
   let numbs = params.id-1;
   console.log(numbs)
   console.log("params is: ", params);
-  // console.log(params.id);
   
-  let [products, setProducts] = useState([]);
+  // let [products, setProducts] = useState([]);
   const [data, setData] = useState([]);
   const [dataNumb, setDataNumb] = useState([]);
+  const { cart, setCart } = useContext(CartContext);
 
-  const getProducts = async (params) => {
-      
-    const url = `https://fakestoreapi.com/products/${params}`;
-    const response = await fetch(url);
-    const data = await response.json();
-    const dataNumb = data[numbs]
-    console.log(data);
-    console.log(dataNumb)
 
-    if (data) {
-      setData(data);
-    }
-    if (dataNumb) {
-      setDataNumb(dataNumb);
-    }
-    // return numbs;
+    const getProducts = async (params) => {
+      // const { cart, setCart } = useContext(CartContext);
+      const url = `https://fakestoreapi.com/products/${params}`;
+      const response = await fetch(url);
+      const data = await response.json();
+      const dataNumb = data[numbs]
+      console.log(data);
+      console.log(dataNumb)
+  
+      if (data) {
+        setData(data);
+      }
+      if (dataNumb) {
+        setDataNumb(dataNumb);
+      }
   };
 
-  // useEffect(() => {
-  //   let numb = data[params.id];
-  //   getProducts(numb);
-  // }, [numb]);
-
-  //   return(
-  //     <>
-  //       <div className='col-md-6'>
-  //         <img className="image-props"src={numb.image} alt= 'yeet'
-  //         height="4" />
-  //         <h1>{numb.title}</h1>
-  //         <h1>{numb.description}</h1>
-  //       </div>
-  //     </>
-  //   )
-  // }
-
+  const getPickerValue = (value) =>{
+    dataNumb.quantity = value;
+    
+    console.log(dataNumb.quantity)
+  };
 
 useEffect(() => {
   getProducts(data)
   console.log(data);
 }, [data]);
 
-    return(
-      <>
-      <div>
-        <button onClick={() => navigate(`/all-products`)}>Go Back</button>
-        <div className="product-container">  
-          <div className="product-row">
-            <div className="image-col">
-              <img className="image-props" src={dataNumb.image} alt='product' />
-            </div>
-            <div key={dataNumb} className='card-col'>
-              <div className="product-description">
-                <h1 className="title">{dataNumb.title}</h1>
-                <h1>{dataNumb.description}</h1>
-                <h1>${dataNumb.price}</h1>
-              </div>
-            </div> 
+// const ShowProduct = () => {
+  return (
+    <>
+    <div>
+      <button className="go-back" onClick={() => navigate(`/all-products`)}>Go Back</button>
+      <div className="product-container">  
+        <div className="product-row">
+          <div className="image-col">
+            <img className="image-props2" src={dataNumb.image} alt='product' />
           </div>
+          <div key={dataNumb} className='card-col'>
+            <div className="product-description">
+              <h1 className="title">{dataNumb.title}</h1>
+              <h1>{dataNumb.description}</h1>
+              <h1>${dataNumb.price}</h1>
+              <button onClick={ () => setCart([...cart, dataNumb])}>Add to cart</button>
+              <QuantityPicker  min={1} max={10} value={0} onChange={getPickerValue} smooth/>
+            </div>
+          </div> 
         </div>
       </div>
-      </>
-    )
-  }
+    </div>
+    </>
+  );
+};
+

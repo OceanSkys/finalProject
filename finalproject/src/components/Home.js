@@ -29,12 +29,12 @@ export default function ProductsPicker() {
 
   return (
     <div>
-        <SearchBar
+        {/* <SearchBar
         searchValue={searchValue} 
         setSearchValue={setSearchValue}
         >
           Search
-        </SearchBar>
+        </SearchBar> */}
           <div className="product-section">
           <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"/>
           <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>

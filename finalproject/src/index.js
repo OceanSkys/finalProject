@@ -3,27 +3,32 @@ import ReactDOM from 'react-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './index.css';
 import App from './App';
+import CartProvider  from './context/CartContext';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import ProductsPicker from './components/Home';
 import AllProducts from './components/AllProducts';
 import NotFound from './components/NotFound';
-import MyCart from './components/MyCart'
+import Cart from './components/MyCart'
 import ProductDetails from './components/ProductDetails'
+import Checkout from './components/Checkout'
 
 ReactDOM.render(
   <React.StrictMode>
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<App />}>
-          <Route index element={<ProductsPicker />} />
-          <Route path="all-products" element={<AllProducts />} />
-          <Route path="my-cart" element={<MyCart />} />
-          <Route path="product-details/:id" element={<ProductDetails />} />
-          <Route path="*" element={<NotFound />} />
-        </Route>
-      </Routes>
-    </BrowserRouter>
+    <CartProvider>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<App />}>
+            <Route index element={<ProductsPicker />} />
+            <Route path="all-products" element={<AllProducts />} />
+            <Route path="my-cart" element={<Cart />} />
+            <Route path="product-details/:id" element={<ProductDetails />} />
+            <Route path="checkout" element={<Checkout />} />
+            <Route path="*" element={<NotFound />} />
+          </Route>
+        </Routes>
+      </BrowserRouter> 
+    </CartProvider>
   </React.StrictMode>,
   document.getElementById("root")
 );
