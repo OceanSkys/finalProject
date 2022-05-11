@@ -51,7 +51,7 @@ useEffect(() => {
   return (
     <>
     <div>
-      <button className="go-back" onClick={() => navigate(`/all-products`)}>Go Back</button>
+      <button className="go-back btn btn-primary col-md-2 fw-bold" onClick={() => navigate(`/all-products`)}>Go Back</button>
       <div className="product-container">  
         <div className="product-row">
           <div className="image-col">
@@ -62,11 +62,13 @@ useEffect(() => {
               <h1 className="title">{dataNumb.title}</h1>
               <h1>{dataNumb.description}</h1>
               <h1>${dataNumb.price}</h1>
-              <div>
-                <button className="mx-2" onClick={ () => setCart([...cart, dataNumb])}>Add to cart</button>
-                <button className="mx-2" onClick={() => navigate(`/my-cart`)}>Go to Cart</button>
+              <div className="row mt-3 mb-2">
+                <button className="mx-2 btn btn-primary col-md-2 fw-bold d-flex justify-content-center btnn2" onClick={ () => setCart([...cart, dataNumb])}>Add to cart</button>
+                <button className="mx-2 btn btn-primary col-md-2 fw-bold d-flex justify-content-center btnn2" onClick={() => navigate(`/my-cart`)}>Go to Cart</button>
               </div>
-              <QuantityPicker  min={1} max={10} value={0} onChange={getPickerValue} smooth/>
+              <div className="mb-3">
+              <QuantityPicker min={1} max={10} value={0} onChange={getPickerValue} smooth/>  
+              </div>
             </div>
           </div> 
         </div>
