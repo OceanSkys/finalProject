@@ -45,7 +45,7 @@ const Cart = () => {
 
   return (
     <div>
-      <button className="go-back" onClick={() => navigate(`/all-products`)}>Back to Products</button>
+      <button className="btn btn-primary col-md-2 fw-bold d-flex justify-content-center" onClick={() => navigate(`/all-products`)}>Back to Products</button>
       <div className='container total-item border border-dark'>
         <div className='row d-flex justify-content-center'>
           <h2 className='d-flex my-3 justify-content-center'>Items in cart : {cart.length}</h2>

@@ -127,7 +127,7 @@ import  Confetti  from 'react-confetti';
                                         <label for="cvv">CVV</label><br/>
                                         <input type="text" id="cvv" name="cvv" placeholder="352" /><br/>
                                         {/* <button className="btnn btn btn-primary fw-bold marg d-flex justify-content-center" type="button" onClick={{HandleShow, ClearCart}}>Checkout</button> */}
-                                        <NavLink to="/all-products" className="btn btn-primary fw-bold marg d-flex justify-content-center" type="submit" onClick={{HandleShow, ClearCart}}>Checkout</NavLink>
+                                        <NavLink to="/all-products" className="btn btn-primary fw-bold marg d-flex justify-content-center" type="submit" onClick={{ClearCart}}>Checkout</NavLink>
                                     </div>
                                     </div>
                                     </ div>
